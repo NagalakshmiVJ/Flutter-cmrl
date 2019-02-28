@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cmrl/login.dart';
+import 'login.dart';
 
 void main() {
   runApp(MyApp());
@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                                   alignment: Alignment.center,
                                   height: 50.0,
                                   decoration: new BoxDecoration(
-                                    color: Colors.greenAccent,
+                                    color: Color(0xFF18D191),
                                     borderRadius:
                                         new BorderRadius.circular(10.0),
                                   ),
@@ -88,7 +88,7 @@ class _MyAppState extends State<MyApp> {
                                 alignment: Alignment.center,
                                 height: 50.0,
                                 decoration: new BoxDecoration(
-                                  color: Colors.blue,
+                                  color: Color(0xFF4364A1),
                                   borderRadius: new BorderRadius.circular(10.0),
                                 ),
                                 child: new Text(
@@ -109,7 +109,7 @@ class _MyAppState extends State<MyApp> {
                                 alignment: Alignment.center,
                                 height: 50.0,
                                 decoration: new BoxDecoration(
-                                  color: Colors.red,
+                                  color: Color(0xFFDF513B),
                                   borderRadius: new BorderRadius.circular(10.0),
                                 ),
                                 child: new Text(
