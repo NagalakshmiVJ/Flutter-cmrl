@@ -1,8 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'main.dart';
+import 'dart:convert';
 
 class Info extends StatelessWidget {
+  var data;
   @override
   Widget build(BuildContext context) {
+    Future<String> logout() async {
+      var response = await http.get(
+          Uri.encodeFull("http://cmrl.vhrsnext.com/api/method/logout"),
+          headers: {"Accept": "application/json"});
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => MyApp()));
+      data =json.decode(response.body);
+      print(data);
+      // setState(() {
+      //   var convertDataToJson = json.decode(response.body);
+      //   data = convertDataToJson;
+      // });
+    }
+
     return new ListView(
       children: <Widget>[
         Padding(
@@ -14,7 +32,8 @@ class Info extends StatelessWidget {
                 children: <Widget>[
                   new Text(
                     "Profile",
-                    style: new TextStyle(fontSize: 30.0, color: Color(0xFf4169e1)),
+                    style:
+                        new TextStyle(fontSize: 30.0, color: Color(0xFf4169e1)),
                     textAlign: TextAlign.left,
                   ),
                 ],
@@ -42,10 +61,14 @@ class Info extends StatelessWidget {
               ))),
               Card(
                   child: ListTile(
+                      onTap: () {
+                        logout();
+                      },
                       title: Text(
-                'Log Out',
-                style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-              ))),
+                        'Log Out',
+                        style:
+                            new TextStyle(fontSize: 20.0, color: Colors.brown),
+                      ))),
             ],
           )),
         )
