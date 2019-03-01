@@ -9,11 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CMRL',
       debugShowCheckedModeBanner: false,
-      // Set Raleway as the default app font
       theme: ThemeData(
         fontFamily: 'Roboto',
       ),
-
       home: MyHomePage(),
     );
   }
@@ -23,6 +21,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Center(
         child: Column(
           children: <Widget>[
@@ -30,7 +29,7 @@ class MyHomePage extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: new Container(
-                    height: 30.0,
+                    height: 20.0,
                     decoration: new BoxDecoration(
                       color: Colors.white12,
                     ),
@@ -39,11 +38,11 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
             Image.asset('assets/cmbg.jpg'),
-             new Row(
+            new Row(
               children: <Widget>[
                 Expanded(
                   child: new Container(
-                    height: 10.0,
+                    height: 5.0,
                     decoration: new BoxDecoration(
                       color: Colors.white12,
                     ),
@@ -73,8 +72,8 @@ class MyHomePage extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 20.0, right: 5.0, top: 10.0),
+                    padding:
+                        const EdgeInsets.only(left: 20.0, right: 5.0, top: 5.0),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -86,7 +85,7 @@ class MyHomePage extends StatelessWidget {
                           alignment: Alignment.center,
                           height: 50.0,
                           decoration: new BoxDecoration(
-                              color: Color(0xFF18D191),
+                              color: Color(0xFF2832c2),
                               borderRadius: new BorderRadius.circular(9.0)),
                           child: new Text("Login",
                               style: new TextStyle(
@@ -103,7 +102,7 @@ class MyHomePage extends StatelessWidget {
                         height: 60.0,
                         child: new Text("Forgot Password?",
                             style: new TextStyle(
-                                fontSize: 17.0, color: Color(0xFF18D191)))),
+                                fontSize: 17.0, color: Color(0xFf4169e1)))),
                   ),
                 )
               ],
@@ -113,11 +112,11 @@ class MyHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 25.0),
+                    padding: const EdgeInsets.only(bottom: 15.0),
                     child: new Text("Create A New Account ",
                         style: new TextStyle(
                             fontSize: 17.0,
-                            color: Color(0xFF18D191),
+                            color: Color(0xFf4169e1),
                             fontWeight: FontWeight.bold)),
                   ),
                 ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'personal.dart';
+import 'home1.dart';
 import 'explore.dart';
 import 'info.dart';
 
@@ -9,146 +9,44 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _bottomNavIndex = 0;
-  Widget callPage(int bottomNavIndex) {
-    print(bottomNavIndex);
-    switch (bottomNavIndex) {
-      case 0:
-        return HomePage();
-        break;
-      case 1:
-        return Explore();
-        break;
-      case 2:
-        return Info();
-        break;
-      default:
-        return HomePage();
-    }
-  }
-
+  int _selectedTab = 0;
+  final _pageOptions = [
+    HomePage1(),
+    Explore(),
+    Info(),
+  ];
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
+      body: _pageOptions[_selectedTab],
       bottomNavigationBar: new BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        fixedColor: Color(0XFF29D091),
-        currentIndex: _bottomNavIndex,
+        fixedColor: Color(0xFf4169e1),
+        currentIndex: _selectedTab,
         onTap: (int index) {
           setState(() {
-            _bottomNavIndex = index;
-            return Explore();
-            // callPage(index);
+            _selectedTab = index;
           });
         },
         items: [
           new BottomNavigationBarItem(
-              title: new Text('Home'), icon: new Icon(Icons.home)),
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
           new BottomNavigationBarItem(
-              title: new Text('Explore'), icon: new Icon(Icons.explore)),
+            icon: Icon(Icons.explore),
+            title: Text('Explore'),
+          ),
           new BottomNavigationBarItem(
-              title: new Text('Info'), icon: new Icon(Icons.info)),
+            icon: Icon(Icons.info),
+            title: Text('Info'),
+          )
         ],
       ),
       appBar: new AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          iconTheme: new IconThemeData(color: Color(0xFF18D191))),
-      body: MainContent(),
-    );
-  }
-}
-
-class MainContent extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new ListView(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: new Container(
-              child: new Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  new Text(
-                    "Explore",
-                    style: new TextStyle(fontSize: 30.0, color: Colors.blue),
-                    textAlign: TextAlign.left,
-                  ),
-                ],
-              ),
-              new SizedBox(
-                height: 10.0,
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    "Statistics",
-                    style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    "Scheduled Maintenance",
-                    style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    "Preventive Maintenance",
-                    style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    "Breakdown Maintenance",
-                    style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    "Equipment History",
-                    style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    "Stores",
-                    style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    "Personal",
-                    style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    "Shift Roaster",
-                    style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-                  )
-                ],
-              ),
-            ],
-          )),
-        )
-      ],
+          iconTheme: new IconThemeData(color: Color(0xFf4169e1))),
     );
   }
 }
