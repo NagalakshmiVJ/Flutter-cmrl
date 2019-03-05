@@ -42,32 +42,32 @@ class Info extends StatelessWidget {
                 height: 10.0,
               ),
               Card(
-                  child: ListTile(
+                  child: ListTile(leading: Icon(Icons.verified_user),
                       title: Text(
                 'View Profile',
-                style: new TextStyle(fontSize: 20.0, color: Colors.brown),
+                style: new TextStyle(fontSize: 20.0,),
               ))),
               Card(
-                  child: ListTile(
+                  child: ListTile(leading: Icon(Icons.help),
                       title: Text(
                 'Help and Support',
-                style: new TextStyle(fontSize: 20.0, color: Colors.brown),
+                style: new TextStyle(fontSize: 20.0,),
               ))),
               Card(
-                  child: ListTile(
+                  child: ListTile(leading: Icon(Icons.settings),
                       title: Text(
                 'Settings & Privacy',
-                style: new TextStyle(fontSize: 20.0, color: Colors.brown),
+                style: new TextStyle(fontSize: 20.0,),
               ))),
               Card(
-                  child: ListTile(
+                  child: ListTile(leading: Icon(Icons.exit_to_app),
                       onTap: () {
                         logout();
                       },
                       title: Text(
                         'Log Out',
                         style:
-                            new TextStyle(fontSize: 20.0, color: Colors.brown),
+                            new TextStyle(fontSize: 20.0,),
                       ))),
             ],
           )),

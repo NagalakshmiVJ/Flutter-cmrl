@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'pages/maintenance.dart';
+import 'pages/knowledge.dart';
 
 class Explore extends StatelessWidget {
   @override
@@ -14,7 +16,8 @@ class Explore extends StatelessWidget {
                 children: <Widget>[
                   new Text(
                     "Explore",
-                    style: new TextStyle(fontSize: 30.0, color: Color(0xFf4169e1)),
+                    style:
+                        new TextStyle(fontSize: 30.0, color: Color(0xFf4169e1)),
                     textAlign: TextAlign.left,
                   ),
                 ],
@@ -22,18 +25,31 @@ class Explore extends StatelessWidget {
               new SizedBox(
                 height: 10.0,
               ),
-              Card(
-                  child: ListTile(
-                      title: Text(
-                'Maintenance Guide',
-                style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-              ))),
-              Card(
-                  child: ListTile(
-                      title: Text(
-                'Knowledge Sharing Center',
-                style: new TextStyle(fontSize: 20.0, color: Colors.brown),
-              ))),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Maintenance()));
+                },
+                child: Card(
+                    child: ListTile(leading: Icon(Icons.autorenew),
+                        title: Text(
+                  'Maintenance Guide',
+                  style: new TextStyle(fontSize: 20.0, ),
+                ))),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Knowledge()));
+                },
+                child: Card(
+                    child: ListTile(
+                      leading: Icon(Icons.info_outline),
+                        title: Text(
+                  'Knowledge Sharing Center',
+                  style: new TextStyle(fontSize: 20.0,),
+                ))),
+              ),
             ],
           )),
         )

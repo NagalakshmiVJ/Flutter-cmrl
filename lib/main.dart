@@ -42,8 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
     Future<String> getLogin(String pseudo, String password) async {
       var response = await http.get(
           Uri.encodeFull(
-              "http://cmrl.vhrsnext.com/api/method/login?usr=${pseudo}&pwd=${password}"),
+              "http://cmrl.vhrsnext.com/api/method/login?usr=$pseudo&pwd=$password"),
           headers: {"Accept": "application/json"});
+          print(response.body);
       setState(() {
         var convertDataToJson = json.decode(response.body);
         data = convertDataToJson;
@@ -67,7 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     /******************* Check Data ****************************/
     VerifData(String pseudo, String password, var datadb) {
-        if (datadb['message'] == 'Logged In') {
+        print(datadb);
+        if (datadb["message"] == 'Logged In') {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => HomePage()));
         } else {
@@ -137,17 +139,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding:
                         const EdgeInsets.only(left: 20.0, right: 5.0, top: 5.0),
                     child: GestureDetector(
-                      // onTap: () {
-                      //   Navigator.push(
-                      //       context,
-                      //       MaterialPageRoute(
-                      //           builder: (context) => HomePage()));
-                      // },
                       onTap: () {
-                        getLogin(
-                            _pseudoController.text, _passwordController.text);
-                        VerifData(_pseudoController.text,_passwordController.text,data);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
                       },
+                      // onTap: () {
+                      //   getLogin(
+                      //       _pseudoController.text, _passwordController.text);
+                      //   VerifData(_pseudoController.text,_passwordController.text,data);
+                      // },
                       child: new Container(
                           alignment: Alignment.center,
                           height: 50.0,

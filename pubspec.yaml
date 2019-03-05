@@ -43,6 +43,7 @@ flutter:
     - assets/cmrlgif.gif
     - assets/bg.png
     - assets/cmbg.jpg
+    - assets/w1.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
