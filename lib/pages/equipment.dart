@@ -132,7 +132,7 @@ class _EquipmentState extends State<Equipment> {
                       elevation: 15.0,
                       splashColor: Colors.white70,
                       onPressed: () {
-                        
+                         Navigator.pop(context);
                       },
                     ),
                   ],

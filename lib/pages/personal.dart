@@ -27,7 +27,10 @@ class _PersonalState extends State<Personal> {
         child: new Column(
           children: <Widget>[
             new ListTile(
-              leading: const Icon(Icons.person,color: Colors.blue,),
+              leading: const Icon(
+                Icons.person,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "ID",
@@ -35,7 +38,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.person,color: Colors.blue,),
+              leading: const Icon(
+                Icons.person,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Name",
@@ -43,7 +49,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.phone,color: Colors.blue,),
+              leading: const Icon(
+                Icons.phone,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Phone Number",
@@ -51,7 +60,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.phone,color: Colors.blue,),
+              leading: const Icon(
+                Icons.phone,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Emergency Phone Number",
@@ -59,7 +71,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.email,color: Colors.blue,),
+              leading: const Icon(
+                Icons.email,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Email",
@@ -70,7 +85,10 @@ class _PersonalState extends State<Personal> {
               height: 1.0,
             ),
             new ListTile(
-              leading: const Icon(Icons.calendar_today,color: Colors.blue,),
+              leading: const Icon(
+                Icons.calendar_today,
+                color: Colors.blue,
+              ),
               title: const Text('Birthday'),
               onTap: () async {
                 final dtpick = await showDatePicker(
@@ -87,7 +105,10 @@ class _PersonalState extends State<Personal> {
               },
             ),
             new ListTile(
-              leading: const Icon(Icons.person_pin,color: Colors.blue,),
+              leading: const Icon(
+                Icons.person_pin,
+                color: Colors.blue,
+              ),
               title: const Text('Gender'),
             ),
             new Container(
@@ -134,7 +155,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.calendar_today,color: Colors.blue,),
+              leading: const Icon(
+                Icons.calendar_today,
+                color: Colors.blue,
+              ),
               title: const Text('Joining Date'),
               onTap: () async {
                 final dtpick = await showDatePicker(
@@ -152,7 +176,10 @@ class _PersonalState extends State<Personal> {
               },
             ),
             new ListTile(
-              leading: const Icon(Icons.picture_in_picture,color: Colors.blue,),
+              leading: const Icon(
+                Icons.picture_in_picture,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Insurence Number",
@@ -160,7 +187,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.location_city,color: Colors.blue,),
+              leading: const Icon(
+                Icons.location_city,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Residence",
@@ -171,7 +201,10 @@ class _PersonalState extends State<Personal> {
               height: 1.0,
             ),
             new ListTile(
-              leading: const Icon(Icons.person_pin,color: Colors.blue,),
+              leading: const Icon(
+                Icons.person_pin,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Attendance",
@@ -179,7 +212,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.insert_emoticon,color: Colors.blue,),
+              leading: const Icon(
+                Icons.insert_emoticon,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Awards and Recognition",
@@ -187,7 +223,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.equalizer,color: Colors.blue,),
+              leading: const Icon(
+                Icons.equalizer,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Leave Available",
@@ -195,7 +234,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.equalizer,color: Colors.blue,),
+              leading: const Icon(
+                Icons.equalizer,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Leave Consumed",
@@ -203,7 +245,10 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             new ListTile(
-              leading: const Icon(Icons.warning,color: Colors.blue,),
+              leading: const Icon(
+                Icons.warning,
+                color: Colors.blue,
+              ),
               title: new TextField(
                 decoration: new InputDecoration(
                   hintText: "Warnings and memo",
@@ -240,7 +285,7 @@ class _PersonalState extends State<Personal> {
                       elevation: 15.0,
                       splashColor: Colors.white70,
                       onPressed: () {
-                       
+                        Navigator.pop(context);
                       },
                     ),
                   ],

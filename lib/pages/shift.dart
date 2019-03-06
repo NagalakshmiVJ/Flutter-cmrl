@@ -10,7 +10,7 @@ class _ShiftState extends State<Shift> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text('Shift'),
+        title: new Text('Shift Roaster'),
       ),
     );
   }

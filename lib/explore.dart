@@ -31,11 +31,14 @@ class Explore extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => Maintenance()));
                 },
                 child: Card(
-                    child: ListTile(leading: Icon(Icons.autorenew),
+                    child: ListTile(
+                        leading: Icon(Icons.autorenew, color: Colors.blue),
                         title: Text(
-                  'Maintenance Guide',
-                  style: new TextStyle(fontSize: 20.0, ),
-                ))),
+                          'Maintenance Guide',
+                          style: new TextStyle(
+                            fontSize: 20.0,
+                          ),
+                        ))),
               ),
               GestureDetector(
                 onTap: () {
@@ -44,11 +47,13 @@ class Explore extends StatelessWidget {
                 },
                 child: Card(
                     child: ListTile(
-                      leading: Icon(Icons.info_outline),
+                        leading: Icon(Icons.info_outline, color: Colors.blue),
                         title: Text(
-                  'Knowledge Sharing Center',
-                  style: new TextStyle(fontSize: 20.0,),
-                ))),
+                          'Knowledge Sharing Center',
+                          style: new TextStyle(
+                            fontSize: 20.0,
+                          ),
+                        ))),
               ),
             ],
           )),
