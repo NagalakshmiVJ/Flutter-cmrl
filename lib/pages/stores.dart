@@ -7,6 +7,22 @@ class Stores extends StatefulWidget {
 
 class _StoresState extends State<Stores> {
   int rval = 0;
+  int count = 1;
+
+  final GlobalKey<ScaffoldState> mScaffoldState =
+      new GlobalKey<ScaffoldState>();
+
+  void buttonClick() {
+    count = 0;
+    final snackBar = new SnackBar(content: new Text('Submitted'));
+    mScaffoldState.currentState.showSnackBar(snackBar);
+  }
+
+  void buttonClick1() {
+    final snackBar =
+        new SnackBar(content: new Text('Already Submitted. Please Exit'));
+    mScaffoldState.currentState.showSnackBar(snackBar);
+  }
 
   void method1(value) {
     setState(() {
@@ -19,6 +35,7 @@ class _StoresState extends State<Stores> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: mScaffoldState,
       resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
         title: new Text("Stores"),
@@ -182,39 +199,25 @@ class _StoresState extends State<Stores> {
               ),
             ),
             SizedBox(height: 15.0),
-            Row(
+            new Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    new RaisedButton(
-                      child: const Text('Submit'),
-                      color: Theme.of(context).accentColor,
-                      elevation: 15.0,
-                      splashColor: Colors.white70,
-                      onPressed: () {
-                        //  Scaffold.of(context).showSnackBar(SnackBar(
-                        //         content: Text('Show Snackbar'),
-                        //         duration: Duration(seconds: 3),
-                        //       ));
-                      },
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    new RaisedButton(
-                      child: const Text('Cancel'),
-                      color: Theme.of(context).accentColor,
-                      elevation: 15.0,
-                      splashColor: Colors.white70,
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ],
+                new RaisedButton(
+                  child: new Text(
+                    "Submit",
+                    style: new TextStyle(color: Colors.white),
+                  ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  color: Theme.of(context).accentColor,
+                  elevation: 15.0,
+                  splashColor: Colors.white70,
+                  onPressed: () {
+                    if (count == 1)
+                      buttonClick();
+                    else
+                      buttonClick1();
+                  },
                 ),
               ],
             ),

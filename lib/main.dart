@@ -89,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: new Container(
                     height: 20.0,
                     decoration: new BoxDecoration(
+                   
                       color: Colors.white12,
                     ),
                   ),
