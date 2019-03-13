@@ -44,38 +44,31 @@ class _MyHomePageState extends State<MyHomePage> {
           Uri.encodeFull(
               "http://cmrl.vhrsnext.com/api/method/login?usr=$pseudo&pwd=$password"),
           headers: {"Accept": "application/json"});
-          print(response.body);
+      print(response.body);
       setState(() {
         var convertDataToJson = json.decode(response.body);
         data = convertDataToJson;
       });
     }
-    
-      
-    
-    
 
     /*********************Alert Dialog Pseudo******************************/
     void onSignedInErrorPassword() {
       var alert = new AlertDialog(
         title: new Text("Login Error"),
-        content: new Text(
-            "There was an Error signing in. Please try again."),
+        content: new Text("There was an Error signing in. Please try again."),
       );
       showDialog(context: context, child: alert);
     }
 
-
     /******************* Check Data ****************************/
     VerifData(String pseudo, String password, var datadb) {
-        print(datadb);
-        if (datadb["message"] == 'Logged In') {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomePage()));
-        } else {
-          onSignedInErrorPassword();
-        }
-
+      print(datadb);
+      if (datadb["message"] == 'Logged In') {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
+      } else {
+        onSignedInErrorPassword();
+      }
     }
 
     return new Scaffold(
@@ -83,32 +76,23 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            new Row(
-              children: <Widget>[
-                Expanded(
-                  child: new Container(
-                    height: 20.0,
-                    decoration: new BoxDecoration(
-                   
-                      color: Colors.white12,
-                    ),
-                  ),
-                )
-              ],
+            new SizedBox(
+              height: 50.0,
             ),
-            Image.asset('assets/cmbg.jpg'),
-            new Row(
-              children: <Widget>[
-                Expanded(
-                  child: new Container(
-                    height: 5.0,
-                    decoration: new BoxDecoration(
-                      color: Colors.white12,
-                    ),
-                  ),
-                )
-              ],
+            new Image.asset("assets/cmrlcrop.gif"),
+            new Container(
+              child: new Text(
+                "CMRL MAINTENANCE",
+                style: new TextStyle(
+                  fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 20.0,
+                  color: Color(0xFf4169e1),
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
+
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
@@ -116,29 +100,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: _pseudoController,
                 decoration: new InputDecoration(
                   labelText: 'Email',
-                  filled: true,
                 ),
               ),
             ),
-            new SizedBox(
-              height: 15.0,
-            ),
+
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
               child: new TextField(
                 controller: _passwordController,
                 obscureText: _isSecured,
-                decoration:
-                    new InputDecoration(labelText: 'Password', filled: true),
+                decoration: new InputDecoration(
+                  labelText: 'Password',
+                ),
               ),
+            ),
+            new SizedBox(
+              height: 20.0,
             ),
             new Row(
               children: <Widget>[
                 Expanded(
                   child: Padding(
-                    padding:
-                        const EdgeInsets.only(left: 20.0, right: 5.0, top: 5.0),
+                    padding: const EdgeInsets.only(
+                        left: 20.0, right: 5.0, top: 25.0),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -156,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           height: 50.0,
                           decoration: new BoxDecoration(
                               color: Color(0xFF2832c2),
-                              borderRadius: new BorderRadius.circular(9.0)),
+                              borderRadius: new BorderRadius.circular(10.0)),
                           child: new Text("Login",
                               style: new TextStyle(
                                   fontSize: 20.0, color: Colors.white))),
@@ -166,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(
-                        left: 10.0, right: 20.0, top: 10.0),
+                        left: 10.0, right: 20.0, top: 25.0),
                     child: new Container(
                         alignment: Alignment.center,
                         height: 60.0,

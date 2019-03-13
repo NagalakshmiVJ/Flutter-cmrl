@@ -11,9 +11,8 @@ class Info extends StatelessWidget {
       var response = await http.get(
           Uri.encodeFull("http://cmrl.vhrsnext.com/api/method/logout"),
           headers: {"Accept": "application/json"});
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => MyApp()));
-      data =json.decode(response.body);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
+      data = json.decode(response.body);
       print(data);
       // setState(() {
       //   var convertDataToJson = json.decode(response.body);
@@ -42,32 +41,43 @@ class Info extends StatelessWidget {
                 height: 10.0,
               ),
               Card(
-                  child: ListTile(leading: Icon(Icons.verified_user, color: Colors.blue),
+                  child: ListTile(
+                      leading: Icon(Icons.verified_user, color: Colors.blue),
                       title: Text(
-                'View Profile',
-                style: new TextStyle(fontSize: 20.0,),
-              ))),
+                        'View Profile',
+                        style: new TextStyle(
+                          fontSize: 18.0,
+                        ),
+                      ))),
               Card(
-                  child: ListTile(leading: Icon(Icons.help, color: Colors.blue),
+                  child: ListTile(
+                      leading: Icon(Icons.help, color: Colors.blue),
                       title: Text(
-                'Help and Support',
-                style: new TextStyle(fontSize: 20.0,),
-              ))),
+                        'Help and Support',
+                        style: new TextStyle(
+                          fontSize: 18.0,
+                        ),
+                      ))),
               Card(
-                  child: ListTile(leading: Icon(Icons.settings, color: Colors.blue),
+                  child: ListTile(
+                      leading: Icon(Icons.settings, color: Colors.blue),
                       title: Text(
-                'Settings & Privacy',
-                style: new TextStyle(fontSize: 20.0,),
-              ))),
+                        'Settings & Privacy',
+                        style: new TextStyle(
+                          fontSize: 18.0,
+                        ),
+                      ))),
               Card(
-                  child: ListTile(leading: Icon(Icons.exit_to_app, color: Colors.blue),
+                  child: ListTile(
+                      leading: Icon(Icons.exit_to_app, color: Colors.blue),
                       onTap: () {
                         logout();
                       },
                       title: Text(
                         'Log Out',
-                        style:
-                            new TextStyle(fontSize: 20.0,),
+                        style: new TextStyle(
+                          fontSize: 18.0,
+                        ),
                       ))),
             ],
           )),

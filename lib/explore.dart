@@ -36,7 +36,7 @@ class Explore extends StatelessWidget {
                         title: Text(
                           'Maintenance Guide',
                           style: new TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 18.0,
                           ),
                         ))),
               ),
@@ -51,7 +51,7 @@ class Explore extends StatelessWidget {
                         title: Text(
                           'Knowledge Sharing Center',
                           style: new TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 18.0,
                           ),
                         ))),
               ),

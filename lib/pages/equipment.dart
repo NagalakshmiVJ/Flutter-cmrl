@@ -5,11 +5,11 @@ class Equipment extends StatefulWidget {
   _EquipmentState createState() => _EquipmentState();
 }
 
-
 class _EquipmentState extends State<Equipment> {
   int rval = 0;
   bool btn;
   int count = 0;
+  var date;
   final GlobalKey<ScaffoldState> mScaffoldState =
       new GlobalKey<ScaffoldState>();
 
@@ -36,16 +36,18 @@ class _EquipmentState extends State<Equipment> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(decoration: new BoxDecoration(
-                       gradient: LinearGradient(colors: [Color(0xfffff9c4), Color(0xffb3c5fc) ]),
-                  ),
-      child: Scaffold(
-        key: mScaffoldState,
-        resizeToAvoidBottomPadding: false,
-        appBar: new AppBar(
-          title: new Text("Equipment History"),
-        ),
-        body: SingleChildScrollView(
+    return Scaffold(
+      key: mScaffoldState,
+      resizeToAvoidBottomPadding: false,
+      appBar: new AppBar(
+        title: new Text("Equipment History"),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          // decoration: new BoxDecoration(
+          //   gradient:
+          //       LinearGradient(colors: [Colors.tealAccent, Color(0xb3ffffff)]),
+          // ),
           child: new Column(
             children: <Widget>[
               new ListTile(
@@ -89,6 +91,7 @@ class _EquipmentState extends State<Equipment> {
                     });
                   }
                 },
+                trailing: Text('date'),
               ),
               const Divider(
                 height: 1.0,

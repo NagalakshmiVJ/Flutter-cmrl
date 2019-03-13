@@ -12,9 +12,7 @@ class HomePage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-     decoration: new BoxDecoration(
-                       gradient: LinearGradient(colors: [Color(0xfffff9c4), Color(0xffb3c5fc) ]),
-                  ),
+    
       child: new ListView(
         children: <Widget>[
           Padding(
@@ -31,6 +29,7 @@ class HomePage1 extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                   ],
+   
                 ),
                 new SizedBox(
                   height: 10.0,
@@ -50,7 +49,7 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Statistics',
                               style: new TextStyle(
-                                  fontSize: 20.0, color: Colors.black),
+                                  fontSize: 18.0, color: Colors.black),
                             ))),
                   ),
                 ),
@@ -69,7 +68,7 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Scheduled Maintenance',
                               style: new TextStyle(
-                                  fontSize: 20.0, color: Colors.black),
+                                  fontSize: 18.0, color: Colors.black),
                             ))),
                   ),
                 ),
@@ -88,7 +87,7 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Preventive Maintenance',
                               style: new TextStyle(
-                                  fontSize: 20.0, color: Colors.black),
+                                  fontSize: 18.0, color: Colors.black),
                             ))),
                   ),
                 ),
@@ -107,7 +106,7 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Breakdown Maintenance',
                               style: new TextStyle(
-                                  fontSize: 20.0, color: Colors.black),
+                                  fontSize: 18.0, color: Colors.black),
                             ))),
                   ),
                 ),
@@ -126,7 +125,7 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Equipment History',
                               style: new TextStyle(
-                                  fontSize: 20.0, color: Colors.black),
+                                  fontSize: 18.0, color: Colors.black),
                             ))),
                   ),
                 ),
@@ -145,7 +144,7 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Stores',
                               style: new TextStyle(
-                                  fontSize: 20.0, color: Colors.black),
+                                  fontSize: 18.0, color: Colors.black),
                             ))),
                   ),
                 ),
@@ -164,7 +163,7 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Personal',
                               style: new TextStyle(
-                                  fontSize: 20.0, color: Colors.black),
+                                  fontSize: 18.0, color: Colors.black),
                             ))),
                   ),
                 ),
@@ -183,7 +182,7 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Shift Roaster',
                               style: new TextStyle(
-                                  fontSize: 20.0, color: Colors.black),
+                                  fontSize: 18.0, color: Colors.black),
                             ))),
                   ),
                 ),
