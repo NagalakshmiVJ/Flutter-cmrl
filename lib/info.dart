@@ -55,6 +55,8 @@ class Info extends StatelessWidget {
                       title: Text(
                         'Help and Support',
                         style: new TextStyle(
+                          fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.w400,
                           fontSize: 18.0,
                         ),
                       ))),
@@ -64,6 +66,8 @@ class Info extends StatelessWidget {
                       title: Text(
                         'Settings & Privacy',
                         style: new TextStyle(
+                          fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.w400,
                           fontSize: 18.0,
                         ),
                       ))),
@@ -76,6 +80,8 @@ class Info extends StatelessWidget {
                       title: Text(
                         'Log Out',
                         style: new TextStyle(
+                          fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.w400,
                           fontSize: 18.0,
                         ),
                       ))),

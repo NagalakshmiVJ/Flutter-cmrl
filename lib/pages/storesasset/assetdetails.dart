@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 
-class Equipment extends StatefulWidget {
+class Assetdetails extends StatefulWidget {
   @override
-  _EquipmentState createState() => _EquipmentState();
+  _AssetdetailsState createState() => _AssetdetailsState();
 }
 
-class _EquipmentState extends State<Equipment> {
+class _AssetdetailsState extends State<Assetdetails> {
   int rval = 0;
-  bool btn;
   int count = 1;
-  var date;
+
   final GlobalKey<ScaffoldState> mScaffoldState =
       new GlobalKey<ScaffoldState>();
 
   void buttonClick() {
-    count++;
-    btn = false;
+    count = 0;
     final snackBar = new SnackBar(content: new Text('Submitted'));
     mScaffoldState.currentState.showSnackBar(snackBar);
   }
@@ -40,114 +38,164 @@ class _EquipmentState extends State<Equipment> {
       key: mScaffoldState,
       resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
-        title: new Text("Equipment History"),
+        title: new Text("Stores"),
       ),
       body: SingleChildScrollView(
         child: Container(
-          // decoration: new BoxDecoration(
-          //   gradient:
-          //       LinearGradient(colors: [Colors.tealAccent, Color(0xb3ffffff)]),
-          // ),
           child: new Column(
             children: <Widget>[
               new ListTile(
                 leading: const Icon(
-                  Icons.looks_one,
+                  Icons.person,
                   color: Colors.blue,
                 ),
                 title: new TextField(
                   decoration: new InputDecoration(
-                    hintText: "Equipment Number",
+                    hintText: "Asset code",
                   ),
                 ),
               ),
               new ListTile(
                 leading: const Icon(
-                  Icons.looks_two,
+                  Icons.confirmation_number,
                   color: Colors.blue,
                 ),
                 title: new TextField(
                   decoration: new InputDecoration(
-                    hintText: "Serial No.",
+                    hintText: "Shelf/slot no",
                   ),
                 ),
               ),
               new ListTile(
                 leading: const Icon(
-                  Icons.calendar_today,
+                  Icons.note,
                   color: Colors.blue,
                 ),
-                title: const Text('Date Of EIG Approval'),
-                onTap: () async {
-                  final dtpick = await showDatePicker(
-                      context: context,
-                      initialDate: new DateTime(1975),
-                      firstDate: new DateTime(1950),
-                      lastDate: new DateTime(2000));
-
-                  if (dtpick != null && dtpick != dataInfo) {
-                    setState(() {
-                      dataInfo = dtpick;
-                    });
-                  }
-                },
-                trailing: Text('date'),
+                title: new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "threshold quantity",
+                  ),
+                ),
+              ),
+              new ListTile(
+                leading: const Icon(
+                  Icons.fiber_manual_record,
+                  color: Colors.blue,
+                ),
+                title: new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "Shelf life/calibration",
+                  ),
+                ),
               ),
               const Divider(
                 height: 1.0,
               ),
               new ListTile(
                 leading: const Icon(
-                  Icons.transit_enterexit,
+                  Icons.add_shopping_cart,
                   color: Colors.blue,
                 ),
                 title: new TextField(
                   decoration: new InputDecoration(
-                    hintText: "Observations from Scheduled maintenance",
+                    hintText: "Quantity available",
                   ),
                 ),
               ),
               new ListTile(
                 leading: const Icon(
-                  Icons.compare_arrows,
+                  Icons.update,
                   color: Colors.blue,
                 ),
                 title: new TextField(
                   decoration: new InputDecoration(
-                    hintText: "Replacement Of Shares",
+                    hintText: "Last Purchase",
                   ),
                 ),
               ),
               new ListTile(
                 leading: const Icon(
-                  Icons.assignment_turned_in,
+                  Icons.update,
                   color: Colors.blue,
                 ),
                 title: new TextField(
                   decoration: new InputDecoration(
-                    hintText: "Preventive Maintenance Undertaken",
+                    hintText: "Last used",
+                  ),
+                ),
+              ),
+              const Divider(
+                height: 1.0,
+              ),
+              new ListTile(
+                leading: const Icon(
+                  Icons.extension,
+                  color: Colors.blue,
+                ),
+                title: new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "Dimensions",
                   ),
                 ),
               ),
               new ListTile(
                 leading: const Icon(
-                  Icons.trending_down,
+                  Icons.account_box,
                   color: Colors.blue,
                 ),
                 title: new TextField(
                   decoration: new InputDecoration(
-                    hintText: "Breakdown",
+                    hintText: "Weight",
+                  ),
+                ),
+              ),
+              const Divider(
+                height: 1.0,
+              ),
+              new ListTile(
+                leading: const Icon(
+                  Icons.image,
+                  color: Colors.blue,
+                ),
+                title: new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "Picture",
                   ),
                 ),
               ),
               new ListTile(
                 leading: const Icon(
-                  Icons.check_circle,
+                  Icons.schedule,
                   color: Colors.blue,
                 ),
                 title: new TextField(
                   decoration: new InputDecoration(
-                    hintText: "Approval if any expiring",
+                    hintText: "Lead Time for procurement",
+                  ),
+                ),
+              ),
+              const Divider(
+                height: 1.0,
+              ),
+              new ListTile(
+                leading: const Icon(
+                  Icons.person,
+                  color: Colors.blue,
+                ),
+                title: new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "Vendors name",
+                  ),
+                ),
+              ),
+              new ListTile(
+                leading: const Icon(
+                  Icons.subtitles,
+                  color: Colors.blue,
+                ),
+                title: new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "Vendor Contract Details",
                   ),
                 ),
               ),
@@ -166,9 +214,9 @@ class _EquipmentState extends State<Equipment> {
                     elevation: 15.0,
                     splashColor: Colors.white70,
                     onPressed: () {
-                      if (count == 1) {
+                      if (count == 1)
                         buttonClick();
-                      } else
+                      else
                         buttonClick1();
                     },
                   ),

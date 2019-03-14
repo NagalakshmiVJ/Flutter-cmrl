@@ -36,6 +36,8 @@ class Explore extends StatelessWidget {
                         title: Text(
                           'Maintenance Guide',
                           style: new TextStyle(
+                            fontFamily: 'Ubuntu',
+                            fontWeight: FontWeight.w400,
                             fontSize: 18.0,
                           ),
                         ))),
@@ -51,6 +53,8 @@ class Explore extends StatelessWidget {
                         title: Text(
                           'Knowledge Sharing Center',
                           style: new TextStyle(
+                            fontFamily: 'Ubuntu',
+                            fontWeight: FontWeight.w400,
                             fontSize: 18.0,
                           ),
                         ))),

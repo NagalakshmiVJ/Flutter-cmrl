@@ -7,20 +7,23 @@ class Personal extends StatefulWidget {
 
 class _PersonalState extends State<Personal> {
   int rval = 0;
-  int count=1;
+  int count = 1;
+  TextEditingController tectrl = new TextEditingController();
 
   final GlobalKey<ScaffoldState> mScaffoldState =
       new GlobalKey<ScaffoldState>();
 
   void buttonClick() {
-    count=0;
+    count = 0;
     final snackBar = new SnackBar(content: new Text('Submitted'));
     mScaffoldState.currentState.showSnackBar(snackBar);
+    tectrl.clear();
   }
+
   void buttonClick1() {
-    final snackBar = new SnackBar(content: new Text('Already Submitted. Please Exit'));
+    final snackBar =
+        new SnackBar(content: new Text('Already Submitted. Please Exit'));
     mScaffoldState.currentState.showSnackBar(snackBar);
-    
   }
 
   void method1(value) {
@@ -48,6 +51,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "ID",
                 ),
@@ -59,6 +63,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Name",
                 ),
@@ -70,6 +75,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Phone Number",
                 ),
@@ -81,6 +87,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Emergency Phone Number",
                 ),
@@ -92,6 +99,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Email",
                 ),
@@ -198,6 +206,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Insurence Number",
                 ),
@@ -209,6 +218,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Residence",
                 ),
@@ -223,6 +233,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Attendance",
                 ),
@@ -234,6 +245,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Awards and Recognition",
                 ),
@@ -245,6 +257,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Leave Available",
                 ),
@@ -256,6 +269,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Leave Consumed",
                 ),
@@ -267,6 +281,7 @@ class _PersonalState extends State<Personal> {
                 color: Colors.blue,
               ),
               title: new TextField(
+                controller: tectrl,
                 decoration: new InputDecoration(
                   hintText: "Warnings and memo",
                 ),
@@ -287,10 +302,10 @@ class _PersonalState extends State<Personal> {
                   elevation: 15.0,
                   splashColor: Colors.white70,
                   onPressed: () {
-                   if(count==1)
-                    buttonClick();
+                    if (count == 1)
+                      buttonClick();
                     else
-                    buttonClick1();
+                      buttonClick1();
                   },
                 ),
               ],

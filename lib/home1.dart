@@ -12,7 +12,6 @@ class HomePage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-    
       child: new ListView(
         children: <Widget>[
           Padding(
@@ -24,12 +23,11 @@ class HomePage1 extends StatelessWidget {
                   children: <Widget>[
                     new Text(
                       "Home",
-                      style:
-                          new TextStyle(fontSize: 30.0, color: Color(0xFf4169e1)),
+                      style: new TextStyle(
+                          fontSize: 30.0, color: Color(0xFf4169e1)),
                       textAlign: TextAlign.left,
                     ),
                   ],
-   
                 ),
                 new SizedBox(
                   height: 10.0,
@@ -49,7 +47,10 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Statistics',
                               style: new TextStyle(
-                                  fontSize: 18.0, color: Colors.black),
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.0,
+                                  color: Colors.black),
                             ))),
                   ),
                 ),
@@ -68,7 +69,10 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Scheduled Maintenance',
                               style: new TextStyle(
-                                  fontSize: 18.0, color: Colors.black),
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.0,
+                                  color: Colors.black),
                             ))),
                   ),
                 ),
@@ -87,7 +91,10 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Preventive Maintenance',
                               style: new TextStyle(
-                                  fontSize: 18.0, color: Colors.black),
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.0,
+                                  color: Colors.black),
                             ))),
                   ),
                 ),
@@ -106,7 +113,10 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Breakdown Maintenance',
                               style: new TextStyle(
-                                  fontSize: 18.0, color: Colors.black),
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.0,
+                                  color: Colors.black),
                             ))),
                   ),
                 ),
@@ -125,7 +135,10 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Equipment History',
                               style: new TextStyle(
-                                  fontSize: 18.0, color: Colors.black),
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.0,
+                                  color: Colors.black),
                             ))),
                   ),
                 ),
@@ -144,7 +157,10 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Stores',
                               style: new TextStyle(
-                                  fontSize: 18.0, color: Colors.black),
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.0,
+                                  color: Colors.black),
                             ))),
                   ),
                 ),
@@ -163,7 +179,10 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Personal',
                               style: new TextStyle(
-                                  fontSize: 18.0, color: Colors.black),
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.0,
+                                  color: Colors.black),
                             ))),
                   ),
                 ),
@@ -182,7 +201,10 @@ class HomePage1 extends StatelessWidget {
                             title: Text(
                               'Shift Roaster',
                               style: new TextStyle(
-                                  fontSize: 18.0, color: Colors.black),
+                                  fontFamily: 'Ubuntu',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.0,
+                                  color: Colors.black),
                             ))),
                   ),
                 ),

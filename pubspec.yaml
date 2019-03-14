@@ -85,7 +85,7 @@ flutter:
         - asset: fonts/RobotoMono-Italic.ttf
           weight: 400
         - asset: fonts/RobotoMono-Regular.ttf
-          weight: 400
+          
     # - family: Trajan Pro
     #   fonts:
     #     - asset: fonts/TrajanPro.ttf

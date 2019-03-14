@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontFamily: 'Ubuntu',
                   fontWeight: FontWeight.w700,
                   fontSize: 20.0,
-                  color: Color(0xFf4169e1),
+                  color: Color(0xff4D45CF),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -144,6 +144,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               borderRadius: new BorderRadius.circular(10.0)),
                           child: new Text("Login",
                               style: new TextStyle(
+                                fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.w400,
                                   fontSize: 20.0, color: Colors.white))),
                     ),
                   ),
@@ -156,27 +158,29 @@ class _MyHomePageState extends State<MyHomePage> {
                         alignment: Alignment.center,
                         height: 60.0,
                         child: new Text("Forgot Password?",
-                            style: new TextStyle(
+                            style: new TextStyle(fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.w400,
                                 fontSize: 17.0, color: Color(0xFf4169e1)))),
                   ),
                 )
               ],
             ),
-            // Expanded(
-            //   child: Column(
-            //     mainAxisAlignment: MainAxisAlignment.end,
-            //     children: <Widget>[
-            //       Padding(
-            //         padding: const EdgeInsets.only(bottom: 15.0),
-            //         child: new Text("Create A New Account ",
-            //             style: new TextStyle(
-            //                 fontSize: 17.0,
-            //                 color: Color(0xFf4169e1),
-            //                 fontWeight: FontWeight.bold)),
-            //       ),
-            //     ],
-            //   ),
-            // )
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 15.0),
+                    child: new Text("Create A New Account ",
+                        style: new TextStyle(fontFamily: 'Ubuntu',
+                  
+                            fontSize: 17.0,
+                            color: Color(0xFf4169e1),
+                            )),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
