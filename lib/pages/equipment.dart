@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 
 class Equipment extends StatefulWidget {
   @override
@@ -10,8 +12,30 @@ class _EquipmentState extends State<Equipment> {
   bool btn;
   int count = 1;
   var date;
+  
   final GlobalKey<ScaffoldState> mScaffoldState =
       new GlobalKey<ScaffoldState>();
+
+  // String _value = '';
+  var txt = new TextEditingController();
+
+
+  Future _selectDate() async {
+    
+    var now = new DateTime.now();
+    var formatter = new DateFormat('dd-MM-yyyy');
+    
+    DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: now,
+        firstDate: new DateTime(2016),
+        lastDate: now.add(new Duration(days: 2))
+    );
+    if(picked != null) setState(() {
+      String formatted = formatter.format(picked);
+      txt.text = formatted ;
+    });
+  }
 
   void buttonClick() {
     count++;
@@ -58,6 +82,7 @@ class _EquipmentState extends State<Equipment> {
                 title: new TextField(
                   decoration: new InputDecoration(
                     hintText: "Equipment Number",
+                    
                   ),
                 ),
               ),
@@ -74,28 +99,49 @@ class _EquipmentState extends State<Equipment> {
               ),
               new ListTile(
                 leading: const Icon(
+                  Icons.select_all,
+                  color: Colors.blue,
+                ),
+            title: const Text('Select Your Plan'),
+            trailing: new DropdownButton<String>(
+              value: "Hourly",
+              onChanged: (String newValue) {
+                print(newValue);
+              },
+              items:
+                  <String>['Hourly', 'Weekly', 'Monthly'].map((String value) {
+                return new DropdownMenuItem<String>(
+                  value: value,
+                  child: new Text(value),
+                );
+              }).toList(),
+            ),
+          ),
+              new ListTile(
+                leading: const Icon(
                   Icons.calendar_today,
                   color: Colors.blue,
                 ),
-                title: const Text('Date Of EIG Approval'),
-                onTap: () async {
-                  final dtpick = await showDatePicker(
-                      context: context,
-                      initialDate: new DateTime(1975),
-                      firstDate: new DateTime(1950),
-                      lastDate: new DateTime(2000));
-
-                  if (dtpick != null && dtpick != dataInfo) {
-                    setState(() {
-                      dataInfo = dtpick;
-                    });
-                  }
-                },
-                trailing: Text('date'),
+                title: new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "Date of EIG Approval",
+                    
+                  ),
+                  
+                  controller: txt,
+                  keyboardType: TextInputType.number
+                ),
+                trailing: new IconButton(
+                                 icon: new Icon(Icons.calendar_today),
+                                 onPressed: () {
+                                   _selectDate(); 
+                                   }
+                                    ,
+                               ),
               ),
-              const Divider(
-                height: 1.0,
-              ),
+              // const Divider(
+              //   height: 1.0,
+              // ),
               new ListTile(
                 leading: const Icon(
                   Icons.transit_enterexit,
