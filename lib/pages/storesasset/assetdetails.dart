@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Assetdetails extends StatefulWidget {
   @override
@@ -8,6 +10,19 @@ class Assetdetails extends StatefulWidget {
 class _AssetdetailsState extends State<Assetdetails> {
   int rval = 0;
   int count = 1;
+  File _image;
+
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(
+      source: ImageSource.gallery,
+      maxHeight: 50.0,
+      maxWidth: 50.0,
+    );
+
+    setState(() {
+      _image = image;
+    });
+  }
 
   final GlobalKey<ScaffoldState> mScaffoldState =
       new GlobalKey<ScaffoldState>();
@@ -157,11 +172,10 @@ class _AssetdetailsState extends State<Assetdetails> {
                   Icons.image,
                   color: Colors.blue,
                 ),
-                title: new TextField(
-                  decoration: new InputDecoration(
-                    hintText: "Picture",
-                  ),
-                ),
+                onTap: () {
+                  getImage();
+                },
+              
               ),
               new ListTile(
                 leading: const Icon(

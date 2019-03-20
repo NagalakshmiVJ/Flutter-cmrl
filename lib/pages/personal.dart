@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Personal extends StatefulWidget {
   @override
@@ -30,6 +31,24 @@ class _PersonalState extends State<Personal> {
     setState(() {
       rval = value;
     });
+  }
+
+  var txt = new TextEditingController();
+
+  Future _selectDate() async {
+    var now = new DateTime.now();
+    var formatter = new DateFormat('dd-MM-yyyy');
+
+    DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: now,
+        firstDate: new DateTime(2016),
+        lastDate: now.add(new Duration(days: 2)));
+    if (picked != null)
+      setState(() {
+        String formatted = formatter.format(picked);
+        txt.text = formatted;
+      });
   }
 
   DateTime dataInfo;
@@ -113,21 +132,15 @@ class _PersonalState extends State<Personal> {
                 Icons.calendar_today,
                 color: Colors.blue,
               ),
-              title: const Text('Birthday'),
-              onTap: () async {
-                final dtpick = await showDatePicker(
-                    context: context,
-                    initialDate: new DateTime(1975),
-                    firstDate: new DateTime(1950),
-                    lastDate: new DateTime(2000));
-
-                if (dtpick != null && dtpick != dataInfo) {
-                  setState(() {
-                    dataInfo = dtpick;
-                    print(dataInfo);
-                  });
-                }
-              },
+              title: new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "Birthdate",
+                  ),
+                  onTap: () {
+                    _selectDate();
+                  },
+                  controller: txt,
+                  keyboardType: TextInputType.number),
             ),
             new ListTile(
               leading: const Icon(

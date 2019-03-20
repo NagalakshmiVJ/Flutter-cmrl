@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class Equipment extends StatefulWidget {
   @override
   _EquipmentState createState() => _EquipmentState();
@@ -12,29 +11,27 @@ class _EquipmentState extends State<Equipment> {
   bool btn;
   int count = 1;
   var date;
-  
+
   final GlobalKey<ScaffoldState> mScaffoldState =
       new GlobalKey<ScaffoldState>();
 
   // String _value = '';
   var txt = new TextEditingController();
 
-
   Future _selectDate() async {
-    
     var now = new DateTime.now();
     var formatter = new DateFormat('dd-MM-yyyy');
-    
+
     DateTime picked = await showDatePicker(
         context: context,
         initialDate: now,
         firstDate: new DateTime(2016),
-        lastDate: now.add(new Duration(days: 2))
-    );
-    if(picked != null) setState(() {
-      String formatted = formatter.format(picked);
-      txt.text = formatted ;
-    });
+        lastDate: now.add(new Duration(days: 2)));
+    if (picked != null)
+      setState(() {
+        String formatted = formatter.format(picked);
+        txt.text = formatted;
+      });
   }
 
   void buttonClick() {
@@ -82,7 +79,6 @@ class _EquipmentState extends State<Equipment> {
                 title: new TextField(
                   decoration: new InputDecoration(
                     hintText: "Equipment Number",
-                    
                   ),
                 ),
               ),
@@ -102,42 +98,35 @@ class _EquipmentState extends State<Equipment> {
                   Icons.select_all,
                   color: Colors.blue,
                 ),
-            title: const Text('Select Your Plan'),
-            trailing: new DropdownButton<String>(
-              value: "Hourly",
-              onChanged: (String newValue) {
-                print(newValue);
-              },
-              items:
-                  <String>['Hourly', 'Weekly', 'Monthly'].map((String value) {
-                return new DropdownMenuItem<String>(
-                  value: value,
-                  child: new Text(value),
-                );
-              }).toList(),
-            ),
-          ),
+                title: const Text('Select Your Plan'),
+                trailing: new DropdownButton<String>(
+                  value: "Hourly",
+                  onChanged: (String newValue) {
+                    print(newValue);
+                  },
+                  items: <String>['Hourly', 'Weekly', 'Monthly']
+                      .map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: new Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
               new ListTile(
                 leading: const Icon(
                   Icons.calendar_today,
                   color: Colors.blue,
                 ),
                 title: new TextField(
-                  decoration: new InputDecoration(
-                    hintText: "Date of EIG Approval",
-                    
-                  ),
-                  
-                  controller: txt,
-                  keyboardType: TextInputType.number
-                ),
-                trailing: new IconButton(
-                                 icon: new Icon(Icons.calendar_today),
-                                 onPressed: () {
-                                   _selectDate(); 
-                                   }
-                                    ,
-                               ),
+                    decoration: new InputDecoration(
+                      hintText: "Date of EIG Approval",
+                    ),
+                    onTap: () {
+                      _selectDate();
+                    },
+                    controller: txt,
+                    keyboardType: TextInputType.number),
               ),
               // const Divider(
               //   height: 1.0,

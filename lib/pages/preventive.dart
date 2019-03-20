@@ -6,11 +6,12 @@ class Preventive extends StatefulWidget {
     return new PreventiveState();
   }
 }
- 
+
 class PreventiveState extends State<Preventive> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: new ThemeData(
         primaryColor: const Color(0xFF229E9C),
       ),
@@ -36,7 +37,7 @@ class PreventiveState extends State<Preventive> with WidgetsBindingObserver {
               new Container(
                 margin: const EdgeInsets.all(16.0),
                 child: new DropdownButton<String>(
-                  items: <String>['Mens', 'Womans'].map((String value) {
+                  items: <String>['Men', 'Women'].map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
                       child: new Text(value),
