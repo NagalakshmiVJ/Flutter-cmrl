@@ -17,7 +17,8 @@ class Explore extends StatelessWidget {
                   new Text(
                     "Explore",
                     style:
-                        new TextStyle(fontSize: 30.0, color: Color(0xFf4169e1)),
+                        new TextStyle(fontFamily: 'Kanit',
+                                  fontWeight: FontWeight.w700,fontSize: 30.0, color: Color(0xFf4169e1)),
                     textAlign: TextAlign.left,
                   ),
                 ],

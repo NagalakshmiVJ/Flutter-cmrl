@@ -24,6 +24,9 @@ class HomePage1 extends StatelessWidget {
                     new Text(
                       "Home",
                       style: new TextStyle(
+                        fontFamily: 'Kanit',
+                                  fontWeight: FontWeight.w700,
+                                  
                           fontSize: 30.0, color: Color(0xFf4169e1)),
                       textAlign: TextAlign.left,
                     ),

@@ -15,6 +15,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  shared_preferences: ^0.4.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -87,6 +88,16 @@ flutter:
         - asset: fonts/RobotoMono-Italic.ttf
           weight: 400
         - asset: fonts/RobotoMono-Regular.ttf
+    - family: Kanit
+      fonts:
+        - asset: fonts/Kanit-Bold.ttf
+          weight: 700
+        - asset: fonts/Kanit-Italic.ttf
+          weight: 400
+        - asset: fonts/Kanit-ExtraLight.ttf
+          weight: 200
+        - asset: fonts/Kanit-Regular.ttf
+      
           
     # - family: Trajan Pro
     #   fonts:

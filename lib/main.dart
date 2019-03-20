@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontFamily: 'Ubuntu',
                   fontWeight: FontWeight.w700,
                   fontSize: 20.0,
-                  color: Color(0xff4D45CF),
+                  color: Color(0xff354DAD),
                 ),
                 textAlign: TextAlign.center,
               ),

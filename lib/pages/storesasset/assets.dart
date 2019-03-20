@@ -15,23 +15,50 @@ class _AssetsState extends State<Assets> {
       ),
       body: new Column(
         children: <Widget>[
-          GestureDetector(
-            onTap: (){
-           setState((){
-             Navigator.push(context, MaterialPageRoute(
-               builder: (context) => Assetdetails()
-             ));
-           });
-            },
-                      child: new Container(
-              child: new Text("Doors"),
-            ),
+          new ListTile(
+              title: new Text("Doors",
+                  style: new TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 17.0,
+                  )),
+              trailing: new Icon(Icons.arrow_forward),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Assetdetails()));
+              }),
+          new Divider(
+            height: 1.0,
           ),
-          new Container(
-            child: new Text("Wheels"),
+          new ListTile(
+              title: new Text("Wheels",
+                  style: new TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 17.0,
+                  )),
+              trailing: Container(child: new Icon(Icons.arrow_forward)),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Assetdetails()));
+              }),
+          new Divider(
+            height: 1.0,
           ),
-          new Container(
-            child: new Text("Seats"),
+          new ListTile(
+              title: new Text("Seats",
+                  style: new TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 17.0,
+                  )),
+              trailing: new Icon(Icons.arrow_forward),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Assetdetails()));
+              }),
+          new Divider(
+            height: 1.0,
           ),
         ],
       ),
