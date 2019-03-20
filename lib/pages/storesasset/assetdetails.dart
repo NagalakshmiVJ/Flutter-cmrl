@@ -11,9 +11,10 @@ class _AssetdetailsState extends State<Assetdetails> {
   int rval = 0;
   int count = 1;
   File _image;
+  var image;
 
   Future getImage() async {
-    var image = await ImagePicker.pickImage(
+     image = await ImagePicker.pickImage(
       source: ImageSource.gallery,
       maxHeight: 50.0,
       maxWidth: 50.0,
@@ -175,7 +176,7 @@ class _AssetdetailsState extends State<Assetdetails> {
                 onTap: () {
                   getImage();
                 },
-            trailing: Image.file(_image)
+             trailing: Image.file(image),
               ),
               new ListTile(
                 leading: const Icon(
