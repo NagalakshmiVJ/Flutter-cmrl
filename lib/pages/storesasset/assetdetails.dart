@@ -175,7 +175,7 @@ class _AssetdetailsState extends State<Assetdetails> {
                 onTap: () {
                   getImage();
                 },
-              
+            trailing: Image.file(_image)
               ),
               new ListTile(
                 leading: const Icon(
